@@ -1,12 +1,16 @@
 <!doctype html>
 <html lang="en">
-  {% load staticfiles %}
+  <style type="text/css">
+  pre {
+   white-space: pre-wrap;
+   word-wrap: break-word;
+  }
+  </style>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Album example for Bootstrap</title>
 
@@ -52,33 +56,26 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">你好，我是...</h1>
-          <img src="{% static 'me.png' %}" width=20%>
+          <h1 class="jumbotron-heading">我的博客</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <p>
-            <a href="blog" class="btn btn-primary my-2">我的博客</a>
-            <a href="{% static 'resume.pdf' %}" class="btn btn-secondary my-2">我的简历</a>
+            <a href=".." class="btn btn-primary my-2">回到博客</a>
           </p>
         </div>
       </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
+      <div class="container">
 
-          <div class="row">
-          	{% for showme in showmes.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{ showme.image.url }}">
-                <div class="card-body">
-                  <p class="card-text">{{ showme.description }}</p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+		<h2><a href="{{ blog.id }}">{{ blog.title }}</a></h2>
+		--------------------------------------------------------------------------------{{ blog.date }}
+
+		<br>
+		<img src="{{ blog.image.url }}" height=200>
+		<br>
+		<pre style="width:750px;">{{ blog.text }}</pre>
+		<br>
+
       </div>
-
     </main>
 
     <footer class="text-muted">
