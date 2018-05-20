@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page</title>
+</head>
+<body>
+    <p>this home page!</p>
+    {% for showme in showmes.all%}
+    {{showme.description}}
+    {%endfor%}
+</body>
+</html>
