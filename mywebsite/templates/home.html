@@ -8,6 +8,7 @@
     <p>this home page!</p>
     {% for showme in showmes.all%}
     {{showme.description}}
+    <img src="{{showme.image.url}}" alt="">
     {%endfor%}
 </body>
 </html>
